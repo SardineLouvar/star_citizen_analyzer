@@ -1,3 +1,10 @@
+# Dev Testing config file
+dev_config.yaml
+
+# data folder
+/data/*
+!/data/.gitkeep
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]

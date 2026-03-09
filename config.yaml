@@ -1,0 +1,5 @@
+#insert API token from UEX here.
+api_token : !!str ""
+
+# keep program quiet unless there are any issues or changes
+quiet : !!bool True
