@@ -1,5 +1,15 @@
-#insert API token from UEX here.
-api_token : !!str ""
+# Insert API token from UEX here
+api_token: ""
 
-# keep program quiet unless there are any issues or changes
-quiet : !!bool True
+# Keep program quiet unless there are any issues or changes
+quiet: !!bool true
+
+
+########## Properties of the API to search for ###########################
+
+# Resources specified in the UEX API 2.0 documentation
+resources:
+
+
+# [commodity_id, terminal_id] pairs to fetch history for
+id_searches:

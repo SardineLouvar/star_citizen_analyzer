@@ -69,24 +69,26 @@ if __name__ == "__main__":
     temp_key = check_key()
 
     # Resources to get data on
-    resources = ["commodities_prices_all", "cities", "space_stations"]
+    resources = config["resources"]
 
     #general APIs
-    for r in resources:
-        fetch_and_save_json(r, temp_key)
-        json_into_db(r)
-        generate_analysis_file(r)
-        generate_fig_folder(r)
+    if resources:
+        for r in resources:
+            fetch_and_save_json(r, temp_key)
+            json_into_db(r)
+            generate_analysis_file(r)
+            generate_fig_folder(r)
 
     # List of [commodity_id, terminal_id] to get history of (get from commodities_prices_all)
-    id_searches = [[5,12],[32,16]]
+    id_searches = config["id_searches"]
 
     # commodity histories
-    for id in id_searches:
-        name = fetch_and_save_json(id, temp_key, history=True)
-        json_into_db(name)
-        generate_history_analysis_file(name)
-        generate_history_fig_folder(name)
+    if id_searches:
+        for id in id_searches:
+            name = fetch_and_save_json(id, temp_key, history=True)
+            json_into_db(name)
+            generate_history_analysis_file(name)
+            generate_history_fig_folder(name)
 
     delete_pycache_dirs()
     
