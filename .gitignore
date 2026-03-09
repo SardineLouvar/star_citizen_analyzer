@@ -2,8 +2,12 @@
 dev_config.yaml
 
 # data folder
-/data/*
-!/data/.gitkeep
+data/api_data/*
+data/databases/*
+data/figs/*
+
+# keep example json
+!data/api_data/commodities_prices_all.json
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
